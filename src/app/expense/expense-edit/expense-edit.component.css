@@ -1,0 +1,10 @@
+.expense-input:focus {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+
+.cost {
+  size: inherit;
+}
