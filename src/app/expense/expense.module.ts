@@ -2,6 +2,8 @@ export class Expense {
   constructor(
     public id: string,
 
+    public lastModified: Date,
+
     public date: string,
     public expenditure1: string,
     public cost1: string,

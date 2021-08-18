@@ -68,8 +68,14 @@ export class ExpenseEditComponent implements OnInit {
     let values = form.value; // get all the values of the form.
     console.log(values);
 
+    const lastModified = new Date();
+
     let newExpense = new Expense(
       this.expenseService.generateId(),
+
+      lastModified,
+
+      values.date,
 
       values.expenditure1,
       values.cost1,
@@ -87,14 +93,18 @@ export class ExpenseEditComponent implements OnInit {
       values.cost5
     );
 
-    this.expenseService.generateId();
+    // this.expenseService.generateId();
 
     if (this.editMode) {
       this.expenseService.updateExpense(this.originalExpense, newExpense);
     } else {
       this.expenseService.addExpense(newExpense);
     }
+
+    this.router.navigate(['/expenses']);
   }
 
-  onCancel() {}
+  onCancel() {
+    this.router.navigate(['/expenses']);
+  }
 }
