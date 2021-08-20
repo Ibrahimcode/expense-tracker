@@ -12,6 +12,8 @@ import { Expense } from '../expense.module';
 export class ExpenseDetailComponent implements OnInit {
   @Input() expense!: Expense;
 
+  total: number = 0.0;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -22,7 +24,30 @@ export class ExpenseDetailComponent implements OnInit {
     const id = this.route.params.subscribe((params: Params) => {
       const id = params['id'];
       this.expense = this.expenseService.getExpense(id);
+
+      this.calTotal();
     });
+  }
+
+  calTotal() {
+    let total = 0.0;
+    let amounts = [
+      parseFloat(this.expense.cost1),
+      parseFloat(this.expense.cost2),
+      parseFloat(this.expense.cost3),
+      parseFloat(this.expense.cost4),
+      parseFloat(this.expense.cost5),
+    ];
+
+    amounts.forEach((cost) => {
+      if (isNaN(cost)) {
+        cost = 0.0;
+        total += cost;
+      }
+      total += cost;
+    });
+
+    this.total = total;
   }
 
   onDeleteExpense() {

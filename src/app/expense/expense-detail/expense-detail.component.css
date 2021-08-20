@@ -2,3 +2,18 @@
   display: flex;
   justify-content: space-between;
 }
+
+.card-edit {
+  margin-right: 5px;
+}
+
+.expense-item-ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+}
+
+.total {
+  font-weight: 400;
+}

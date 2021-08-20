@@ -5,17 +5,49 @@
       {{ expense.date }}
     </h5>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{ expense.expenditure1 }}</li>
-      <li class="list-group-item">{{ expense.expenditure2 }}</li>
-      <li class="list-group-item">{{ expense.expenditure3 }}</li>
-      <li class="list-group-item">{{ expense.expenditure4 }}</li>
-      <li class="list-group-item">{{ expense.expenditure5 }}</li>
-      <li class="list-group-item">Total</li>
+      <li class="list-group-item">
+        <ul class="expense-item-ul">
+          <li class="expenditure-li">{{ expense.expenditure1 }}</li>
+          <li class="cost-li">{{ expense.cost1 }}</li>
+        </ul>
+      </li>
+      <li class="list-group-item">
+        <ul class="expense-item-ul">
+          <li class="expenditure-li">{{ expense.expenditure2 }}</li>
+          <li class="cost-li">{{ expense.cost2 }}</li>
+        </ul>
+      </li>
+      <li class="list-group-item">
+        <ul class="expense-item-ul">
+          <li class="expenditure-li">{{ expense.expenditure3 }}</li>
+          <li class="cost-li">{{ expense.cost3 }}</li>
+        </ul>
+      </li>
+      <li class="list-group-item">
+        <ul class="expense-item-ul">
+          <li class="expenditure-li">{{ expense.expenditure4 }}</li>
+          <li class="cost-li">{{ expense.cost4 }}</li>
+        </ul>
+      </li>
+      <li class="list-group-item">
+        <ul class="expense-item-ul">
+          <li class="expenditure-li">{{ expense.expenditure5 }}</li>
+          <li class="cost-li">{{ expense.cost5 }}</li>
+        </ul>
+      </li>
+      <li class="list-group-item">
+        <ul class="expense-item-ul">
+          <li class="expenditure-li total">Total</li>
+          <li class="cost-li total">{{ expense.cost1 }}</li>
+        </ul>
+      </li>
     </ul>
     <div class="links">
       <div class="link-primary">
         <a routerLinkActive routerLink="/expense" class="card-link">Back</a>
-        <a [routerLink]="['/expense', expense.id, 'edit']" class="card-link"
+        <a
+          [routerLink]="['/expense', expense.id, 'edit']"
+          class="card-link card-edit"
           >Edit</a
         >
       </div>

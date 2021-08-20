@@ -11,6 +11,7 @@ import { ExpenseTrackComponent } from './expense/expense-track/expense-track.com
 import { ExpenseComponent } from './expense/expense.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     ExpenseRecordsComponent,
     ExpenseTrackComponent,
     ExpenseComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -96,7 +96,7 @@ export class ExpenseService {
     }
     // set the id of the new Expense to the id of the old Expense
     newExpense.id = originalExpense.id;
-    // newExpense._id = originalExpense._id;
+
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     // update database
     this.http

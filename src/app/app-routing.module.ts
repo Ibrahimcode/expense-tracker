@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'expense',
     component: ExpenseComponent,
     children: [
-      { path: 'new', component: ExpenseEditComponent, outlet: 'edit' },
+      { path: 'new', component: ExpenseEditComponent },
       { path: ':id', component: ExpenseDetailComponent },
       { path: ':id/edit', component: ExpenseEditComponent },
     ],

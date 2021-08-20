@@ -1,10 +1,8 @@
-<p>expense-edit works!</p>
-
 <div class="panel panel-default">
   <div class="panel-body">
     <form id="expense-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
       <div class="row">
-        <div class="col-sm-12 form-group">
+        <div class="col-sm-12 form-group date-input">
           <label for="date">Date</label>
           <input
             type="date"
@@ -17,7 +15,7 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <span class="expenditure-heading"> Expenditure </span>
+          <span class="expenditure-heading"> Cost Items </span>
         </div>
         <div class="col-md-4">
           <span class="Amount Heading"> Amount </span>
@@ -33,7 +31,7 @@
               col-md-10
               border-top-0 border-end-0 border-start-0
             "
-            placeholder="Expenditure"
+            placeholder="Cost Item"
             name="expenditure1"
             [ngModel]="expense?.expenditure1"
             required
@@ -49,7 +47,7 @@
               border-top-0 border-end-0 border-start-0
             "
             name="cost1"
-            placeholder="cost $"
+            placeholder="$"
             [(ngModel)]="cost1"
             (input)="calTotal()"
             required
@@ -65,7 +63,7 @@
               col-md-10
               border-top-0 border-end-0 border-start-0
             "
-            placeholder="Expenditure"
+            placeholder="Cost Item"
             name="expenditure2"
             [ngModel]="expense?.expenditure2"
           />
@@ -79,7 +77,7 @@
               col-sm-6
               border-top-0 border-end-0 border-start-0
             "
-            placeholder="cost $"
+            placeholder="$"
             name="cost2"
             [(ngModel)]="cost2"
             (input)="calTotal()"
@@ -95,7 +93,7 @@
               col-md-10
               border-top-0 border-end-0 border-start-0
             "
-            placeholder="Expenditure"
+            placeholder="Cost Item"
             name="expenditure3"
             [ngModel]="expense?.expenditure3"
           />
@@ -109,7 +107,7 @@
               col-sm-6
               border-top-0 border-end-0 border-start-0
             "
-            placeholder="cost $"
+            placeholder="$"
             name="cost3"
             [(ngModel)]="cost3"
             (input)="calTotal()"
@@ -125,7 +123,7 @@
               col-md-10
               border-top-0 border-end-0 border-start-0
             "
-            placeholder="Expenditure"
+            placeholder="Cost Item"
             name="expenditure4"
             [ngModel]="expense?.expenditure4"
           />
@@ -139,7 +137,7 @@
               col-sm-6
               border-top-0 border-end-0 border-start-0
             "
-            placeholder="cost $"
+            placeholder="$"
             name="cost4"
             [(ngModel)]="cost4"
             (input)="calTotal()"
@@ -155,7 +153,7 @@
               col-md-10
               border-top-0 border-end-0 border-start-0
             "
-            placeholder="Expenditure"
+            placeholder="Cost Item"
             name="expenditure5"
             [ngModel]="expense?.expenditure5"
           />
@@ -169,7 +167,7 @@
               col-sm-6
               border-top-0 border-end-0 border-start-0
             "
-            placeholder="cost $"
+            placeholder="$"
             name="cost5"
             [(ngModel)]="cost5"
             (input)="calTotal()"
@@ -186,8 +184,9 @@
           <input
             class="
               expense-input
+              input-total
               col-sm-6
-              border border-end-0 border-start-0 border-width-4
+              border-end-0 border-start-0
             "
             type="text"
             name="total"

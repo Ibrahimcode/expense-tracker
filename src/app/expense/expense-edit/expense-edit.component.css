@@ -13,3 +13,15 @@
   padding: none;
   margin: none;
 }
+
+.date-input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-primary {
+  margin-left: 5px;
+}
+input-total {
+  border-bottom: double 5px solid black;
+}

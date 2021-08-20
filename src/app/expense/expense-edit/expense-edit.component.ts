@@ -66,14 +66,6 @@ export class ExpenseEditComponent implements OnInit {
     });
   }
 
-  // itemCount() {
-  //   return this.cost;
-  // }
-
-  // itemCounter(i: number) {
-  //   return new Array(i);
-  // }
-
   press(i: string) {
     console.log(i);
   }
@@ -91,10 +83,10 @@ export class ExpenseEditComponent implements OnInit {
     costList.forEach((cost) => {
       if (isNaN(cost)) {
         cost = 0.0;
-        // amounts.push(cost);
+
         amounts += cost;
       }
-      // amounts.push(cost);
+
       amounts += cost;
     });
 
