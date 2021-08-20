@@ -16,7 +16,7 @@ import { Expense } from './expense.module';
 export class ExpenseService {
   expensesRecordChangeEvent = new Subject<Expense[]>();
   expense!: Expense;
-  expenses!: Expense[];
+  expenses: Expense[] = [];
   constructor(private http: HttpClient) {}
 
   generateId() {
@@ -26,7 +26,7 @@ export class ExpenseService {
     return dateId;
   }
 
-  getContacts(): Expense[] {
+  getExpenses(): Expense[] {
     // return this.Expenses.slice();
     let expenseList!: Expense[];
     this.http
@@ -77,6 +77,8 @@ export class ExpenseService {
       })
       .subscribe((responseData) => {
         // add new expense to expenses
+        console.log(responseData);
+        console.log('Expenses Array ' + this.expenses);
         this.expenses.push(responseData.expense);
         this.expenses.sort();
         const expensesRecordClone = this.expenses.slice();

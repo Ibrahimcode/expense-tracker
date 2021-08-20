@@ -1,1 +1,27 @@
-<p>expense-detail works!</p>
+<!-- <p>expense-detail works!</p> -->
+<div class="card card-item pad-left-right" style="width: 30rem">
+  <div class="card-body">
+    <h5 class="card-title date">
+      {{ expense.date }}
+    </h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ expense.expenditure1 }}</li>
+      <li class="list-group-item">{{ expense.expenditure2 }}</li>
+      <li class="list-group-item">{{ expense.expenditure3 }}</li>
+      <li class="list-group-item">{{ expense.expenditure4 }}</li>
+      <li class="list-group-item">{{ expense.expenditure5 }}</li>
+      <li class="list-group-item">Total</li>
+    </ul>
+    <div class="links">
+      <div class="link-primary">
+        <a routerLinkActive routerLink="/expense" class="card-link">Back</a>
+        <a [routerLink]="['/expense', expense.id, 'edit']" class="card-link"
+          >Edit</a
+        >
+      </div>
+      <a class="btn btn-danger btn-delete" (click)="onDeleteExpense()"
+        >Delete</a
+      >
+    </div>
+  </div>
+</div>

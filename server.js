@@ -10,7 +10,7 @@ var mongoose = require("mongoose");
 // import the routing file to handle the default (index) route
 var index = require("./server/routes/app");
 
-// ... ADD CODE TO IMPORT YOUR ROUTING FILES HERE ...
+// ... ADD CODE TO IMPORT ROUTING FILES  ...
 var expenseRoute = require("./server/routes/expenses");
 
 // mongoose un: ibrahim
@@ -69,7 +69,7 @@ app.use(express.static(path.join(__dirname, "dist/expense-tracker")));
 // Tell express to map the default route ('/') to the index route
 app.use("/", index);
 
-// ... ADD YOUR CODE TO MAP YOUR URL'S TO ROUTING FILES HERE ...
+// ... ADD YOUR CODE TO MAP URL'S TO ROUTING FILES  ...
 app.use("/expenses", expenseRoute);
 
 // Tell express to map all other non-defined routes back to the index page

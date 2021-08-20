@@ -7,11 +7,12 @@ import { ExpenseEditComponent } from './expense/expense-edit/expense-edit.compon
 
 const routes: Routes = [
   { path: '', redirectTo: '/expense', pathMatch: 'full' },
+  // { path: '', component: ExpenseComponent },
   {
     path: 'expense',
     component: ExpenseComponent,
     children: [
-      { path: 'new', component: ExpenseEditComponent },
+      { path: 'new', component: ExpenseEditComponent, outlet: 'edit' },
       { path: ':id', component: ExpenseDetailComponent },
       { path: ':id/edit', component: ExpenseEditComponent },
     ],

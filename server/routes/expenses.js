@@ -65,6 +65,8 @@ router.put("/:id", (req, res, next) => {
     .then((expense) => {
       expense.lastModified = req.body.lastModified;
 
+      expense.date = req.body.date;
+
       expense.expenditure1 = req.body.expenditure1;
       expense.cost1 = req.body.cost1;
 

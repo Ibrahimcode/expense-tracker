@@ -1,1 +1,20 @@
-<p>expense-track works!</p>
+<!-- <p>expense-track works!</p> -->
+
+<div class="card card-item pad-left-right" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title date">
+      {{ expenseCard.date }}
+    </h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ expenseCard.expenditure1 }}</li>
+      <li class="list-group-item">{{ expenseCard.expenditure2 }}</li>
+      <li class="list-group-item">{{ expenseCard.expenditure3 }}</li>
+    </ul>
+    <a routerLinkActive routerLink="{{ expenseCard.id }}" class="card-link"
+      >Detail</a
+    >
+    <a [routerLink]="['/expense', expenseCard.id, 'edit']" class="card-link"
+      >Edit</a
+    >
+  </div>
+</div>

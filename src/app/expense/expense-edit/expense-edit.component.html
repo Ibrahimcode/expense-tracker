@@ -6,7 +6,13 @@
       <div class="row">
         <div class="col-sm-12 form-group">
           <label for="date">Date</label>
-          <input type="date" name="date" id="date" [ngModel] />
+          <input
+            type="date"
+            name="date"
+            id="date"
+            [ngModel]="expense?.date"
+            required
+          />
         </div>
       </div>
       <div class="row">
@@ -29,7 +35,8 @@
             "
             placeholder="Expenditure"
             name="expenditure1"
-            [ngModel]
+            [ngModel]="expense?.expenditure1"
+            required
           />
         </div>
         <div class="col-md-4">
@@ -43,8 +50,9 @@
             "
             name="cost1"
             placeholder="cost $"
-            [(ngModel)]="cost.cost1"
+            [(ngModel)]="cost1"
             (input)="calTotal()"
+            required
           />
         </div>
       </div>
@@ -59,7 +67,7 @@
             "
             placeholder="Expenditure"
             name="expenditure2"
-            [ngModel]
+            [ngModel]="expense?.expenditure2"
           />
         </div>
         <div class="col-md-4">
@@ -73,7 +81,7 @@
             "
             placeholder="cost $"
             name="cost2"
-            [(ngModel)]="cost.cost2"
+            [(ngModel)]="cost2"
             (input)="calTotal()"
           />
         </div>
@@ -89,7 +97,7 @@
             "
             placeholder="Expenditure"
             name="expenditure3"
-            [ngModel]
+            [ngModel]="expense?.expenditure3"
           />
         </div>
         <div class="col-md-4">
@@ -103,7 +111,7 @@
             "
             placeholder="cost $"
             name="cost3"
-            [(ngModel)]="cost.cost3"
+            [(ngModel)]="cost3"
             (input)="calTotal()"
           />
         </div>
@@ -119,7 +127,7 @@
             "
             placeholder="Expenditure"
             name="expenditure4"
-            [ngModel]
+            [ngModel]="expense?.expenditure4"
           />
         </div>
         <div class="col-md-4">
@@ -133,7 +141,7 @@
             "
             placeholder="cost $"
             name="cost4"
-            [(ngModel)]="cost.cost4"
+            [(ngModel)]="cost4"
             (input)="calTotal()"
           />
         </div>
@@ -149,7 +157,7 @@
             "
             placeholder="Expenditure"
             name="expenditure5"
-            [ngModel]
+            [ngModel]="expense?.expenditure5"
           />
         </div>
         <div class="col-md-4">
@@ -163,11 +171,13 @@
             "
             placeholder="cost $"
             name="cost5"
-            [(ngModel)]="cost.cost5"
+            [(ngModel)]="cost5"
             (input)="calTotal()"
           />
         </div>
       </div>
+      <!-- ********************************************************** -->
+
       <div class="row">
         <div class="col-md-8">
           <span>Total</span>
@@ -187,21 +197,8 @@
           />
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-12 form-group"></div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 form-group"></div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 form-group"></div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 form-group"></div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 form-group"></div>
-      </div>
+      <!-- *********************************************************** -->
+
       <div class="row">
         <div class="col-xs-12 btn-toolbar">
           <button class="btn btn-success" type="submit">Save</button>
@@ -210,14 +207,6 @@
           </button>
         </div>
       </div>
-      <label for="example-ngModel">[(ngModel)]:</label>
-      <input [(ngModel)]="currentItem.name" name="test" id="example-ngModel" />
-      <input [ngModel]="currentItem.name" name="test2" id="example-ngModel" />
     </form>
-    <custom-input-component
-      ngDefaultControl
-      [(ngModel)]="currentItem.name"
-    ></custom-input-component>
-    <p>{{ cost.cost1 }}</p>
   </div>
 </div>

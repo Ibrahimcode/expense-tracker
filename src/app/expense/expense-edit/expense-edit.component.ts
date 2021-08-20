@@ -13,13 +13,13 @@ import { generate } from 'rxjs';
   styleUrls: ['./expense-edit.component.css'],
 })
 export class ExpenseEditComponent implements OnInit {
-  cost: ExpenseCost = {
-    cost1: '',
-    cost2: '',
-    cost3: '',
-    cost4: '',
-    cost5: '',
-  };
+  cost1: string = '';
+  cost2: string = '';
+  cost3: string = '';
+  cost4: string = '';
+  cost5: string = '';
+  // cost: ExpenseCost = new ExpenseCost()
+
   total: number = 0.0;
   currentItem: { name: string; address: string } = {
     name: '',
@@ -30,6 +30,7 @@ export class ExpenseEditComponent implements OnInit {
   editMode: boolean = false;
   originalExpense!: Expense;
   expense!: Expense;
+
   constructor(
     private expenseService: ExpenseService,
     private router: Router,
@@ -53,15 +54,52 @@ export class ExpenseEditComponent implements OnInit {
       this.editMode = true;
       this.expense = JSON.parse(JSON.stringify(this.originalExpense));
 
+      this.cost1 = this.expense.cost1;
+      this.cost2 = this.expense.cost2;
+      this.cost3 = this.expense.cost3;
+      this.cost4 = this.expense.cost4;
+      this.cost5 = this.expense.cost5;
+
+      this.calTotal();
+
       console.log(this.expense);
     });
   }
 
+  // itemCount() {
+  //   return this.cost;
+  // }
+
+  // itemCounter(i: number) {
+  //   return new Array(i);
+  // }
+
+  press(i: string) {
+    console.log(i);
+  }
+
   calTotal() {
-    let cost1 = parseFloat(this.cost.cost1);
-    let cost2 = parseFloat(this.cost.cost2);
-    let cost3 = parseFloat(this.cost.cost3);
-    this.total = parseFloat((cost1 + cost2 + cost3).toFixed(2));
+    let cost1 = parseFloat(this.cost1);
+    let cost2 = parseFloat(this.cost2);
+    let cost3 = parseFloat(this.cost3);
+    let cost4 = parseFloat(this.cost4);
+    let cost5 = parseFloat(this.cost5);
+
+    console.log(cost1);
+    let costList = [cost1, cost2, cost3, cost4, cost5];
+    let amounts = 0;
+    costList.forEach((cost) => {
+      if (isNaN(cost)) {
+        cost = 0.0;
+        // amounts.push(cost);
+        amounts += cost;
+      }
+      // amounts.push(cost);
+      amounts += cost;
+    });
+
+    amounts;
+    this.total = amounts; //parseFloat((cost1 + cost2 + cost3 + cost4 + cost5).toFixed(2));
   }
 
   onSubmit(form: NgForm) {
@@ -101,10 +139,10 @@ export class ExpenseEditComponent implements OnInit {
       this.expenseService.addExpense(newExpense);
     }
 
-    this.router.navigate(['/expenses']);
+    this.router.navigate(['/expense']);
   }
 
   onCancel() {
-    this.router.navigate(['/expenses']);
+    this.router.navigate(['/expense']);
   }
 }

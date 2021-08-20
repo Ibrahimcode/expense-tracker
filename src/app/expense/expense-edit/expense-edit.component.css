@@ -8,3 +8,8 @@
 .cost {
   size: inherit;
 }
+
+.cost-container {
+  padding: none;
+  margin: none;
+}
